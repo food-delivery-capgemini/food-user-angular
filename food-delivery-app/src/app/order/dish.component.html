@@ -1,0 +1,81 @@
+<!-- <input type="number" class="form-control"  [(ngModel)]="dishes.quantity" value=1>
+
+<div class="modal fade" id="proceed">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+
+      <div class="modal-header">
+        <h4 class="modal-title">Breakfast</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+
+      <div class="container">
+
+        <a routerLink="/checkout" class="btn btn-primary" data-dismiss="modal" id="proceed" >Proceed</a>
+
+        <form (ngSubmit)="add()">
+                  dishname <input type="text" value="{{dish.dishName}}">
+                  price <input type="text" value="{{dish.dishPrice}}">
+
+                          <input type="number" id="qty" name="quantity" [(ngModel)]="cart.items.quantity">
+
+                          <input type="submit" value="submit" >
+
+
+                </form>
+
+
+
+        <table class="table ">
+            <thead>
+              <tr>
+                <th>DishName</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+          
+            <tbody>              
+                <tr>
+                 
+                <td>{{dish.dishName}}</td>
+                <td>{{dish.dishPrice}}</td>
+               
+                <td>
+                    <input type="number" class="form-control" id="qty" name="quantity" value="1">
+                </td>                 
+                 <td>
+                    <button type="button" class="btn btn-primary" (click)="addToCart(dish)">Proceed</button>
+                 </td>
+
+                </tr>
+            </tbody>
+          </table>
+
+
+
+      </div>
+      <div class="modal-footer">
+          <a routerLink="/checkout" class="btn btn-primary" data-dismiss="modal" id="proceed" (click)=" addToCart(dish)">Proceed
+        </a>
+        </div>
+    </div>
+  </div>
+</div> --> 
+
+<div class="container">
+  <table class="table ">
+    <tbody>
+      <tr *ngFor="let dish of dishes">
+        <td> <img class="img-responsive" src={{dish.imgUrl}} style="width: 200px;" alt="Card image cap"></td>
+        <td>{{dish.dishName}}</td>
+        <td>Price : {{dish.dishPrice | currency:"INR"}}</td>
+        <td><button type="button" class="btn btn-primary" (click)="addToCart(dish)">Add To Cart</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
